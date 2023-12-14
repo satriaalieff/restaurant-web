@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700&display=swap');
+
+:root {
+  --black: #222222;
+  --white: #f2f2f2;
+  --accent: #ffd700;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: var(--white);
+  background-color: var(--black);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+input,
+textarea,
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Skip To Content */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 1rem 2rem;
+  z-index: 9;
+  transition: all 0.2s ease-in-out;
+  font-weight: 400;
+  background-color: var(--accent);
+  color: var(--black);
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Header Start */
+header {
+  min-height: 100dvh;
+  margin-bottom: 2rem;
+}
+
+.app-bar-container {
+  display: flex;
+  gap: 3;
+  align-items: center;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  flex: 1;
+}
+
+header h1 span {
+  color: var(--accent);
+}
+
+.hamburger-button {
+  border: none;
+  background-color: transparent;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  align-items: flex-end;
+  z-index: 9;
+  position: fixed;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  width: 1.5rem;
+  height: 0.1rem;
+  background-color: var(--white);
+}
+
+.hamburger.half {
+  width: 1rem;
+  background-color: var(--accent);
+}
+
+nav ul {
+  position: fixed;
+  top: -100%;
+  right: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--black);
+  opacity: 90%;
+  transition: all 0.3s ease-in-out;
+  z-index: 8;
+}
+
+nav ul.active {
+  top: 0;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+/* Header Finish */
+
+/* Hero Start */
+.hero {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  background-image: url(../public/heros/hero.jpg);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  z-index: -9;
+  display: flex;
+  box-shadow: 0 0 25px rgba(242, 242, 242, 0.1);
+}
+
+.hero h2 {
+  margin: auto;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+  background-color: rgba(34, 34, 34, 0.5);
+  margin-inline: 1rem;
+  border-radius: 10px;
+}
+/* Hero Finish */
+
+/* Main */
+.restaurant-title-section {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  font-weight: 300;
+}
+
+.restaurant-list {
+  display: grid;
+  gap: 2rem;
+  padding-inline: 1rem;
+}
+
+.restaurant-item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 0.1px solid rgba(242, 242, 242, 0.2);
+  display: grid;
+  align-content: flex-start;
+}
+
+.restaurant-item img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.city {
+  position: absolute;
+  border-bottom-right-radius: 5px;
+  background-color: var(--accent);
+  padding: 0.2rem 1rem;
+  color: var(--black);
+  font-weight: 400;
+}
+
+.content {
+  padding: 1rem;
+  padding-bottom: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.content span {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.content a {
+  font-weight: 100;
+  line-height: 1.3rem;
+  cursor: pointer;
+  height: 44px;
+  width: fit-content;
+  margin: auto;
+}
+
+.content a:hover {
+  color: var(--accent);
+}
+/* Main Finish */
+
+/* Detail Start */
+.restaurant-contents {
+  position: relative;
+}
+
+.restaurant-detail {
+  padding-inline: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.restaurant-detail h4 {
+  text-align: center;
+  font-size: 2rem;
+  margin-block: 1rem;
+  font-weight: 400;
+}
+
+.restaurant-detail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.restaurant-address {
+  margin-bottom: 1rem;
+}
+
+.restaurant-address span {
+  font-weight: 100;
+  font-size: 0.75rem;
+}
+
+.city-detail {
+  margin-top: 0.5rem;
+}
+
+.address-detail {
+  font-weight: 100;
+}
+
+.restaurant-description {
+  margin-bottom: 2rem;
+}
+
+.categories {
+  font-weight: 100;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.restaurant-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: flex-start;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.menus-container {
+  border: 0.1px solid rgba(242, 242, 242, 0.2);
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+}
+
+.menu-title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.restaurant-menu li {
+  list-style: none;
+  line-height: 1rem;
+  font-weight: 300;
+}
+
+.like {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.null-container {
+  width: 100%;
+}
+
+.null-page {
+  width: 100%;
+  padding: 1rem;
+  margin: auto;
+}
+
+.null-page p {
+  text-align: center;
+  font-weight: 100;
+  opacity: 0.5;
+}
+/* Detail Finish */
+
+/* Reviews Start */
+.splide__slide {
+  display: flex;
+}
+
+.review-container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin-inline: 0.5rem;
+  background-color: rgba(242, 242, 242, 0.01);
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 10px;
+}
+
+.customer-name {
+  font-weight: 700;
+}
+
+.customer-date {
+  font-weight: 100;
+}
+
+.review-button-container {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+}
+
+.review-button {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 0.1px solid rgba(242, 242, 242, 0.2);
+  color: var(--accent);
+  font-weight: 300;
+  margin: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.review-button:hover {
+  background-color: var(--accent);
+  color: var(--black);
+  font-weight: 700;
+}
+
+review-section {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background-color: rgba(34, 34, 34, 0.95);
+  z-index: 9999;
+}
+
+review-section.active {
+  display: flex;
+}
+
+.add-review-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.close-review-button {
+  border: none;
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.add-review-container input {
+  border: none;
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.add-review-container input:focus {
+  outline: 0.1px solid var(--accent);
+}
+
+.add-review-container textarea {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--white);
+  color: var(--black);
+  border: none;
+}
+
+.add-review-container textarea:focus {
+  outline: 0.1px solid var(--accent);
+}
+
+.add-review-button {
+  width: 50%;
+  height: 44px;
+  line-height: 44px;
+  align-self: flex-end;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--black);
+  font-weight: 400;
+  border: none;
+}
+/* Reviews Finish */
+
+/* Footer Start */
+footer-bar {
+  display: flex;
+  height: 2.5rem;
+  margin-top: 3rem;
+}
+
+footer-bar p {
+  margin: auto;
+  font-size: 1rem;
+  font-weight: 100;
+  opacity: 50%;
+}
+
+footer-bar a {
+  padding: 1rem 0;
+}
+/* Footer Finish */
